@@ -13,6 +13,8 @@ $ git clone git@github.com:liaucg/module_3.13_assignment.git
 ```
 
 ## Step 3: Create index.js file
+![image](https://github.com/liaucg/module_3.13_assignment/assets/22501900/764d448d-e10e-4bbb-a96b-0910d0662e3f)
+
 [index.js](index.js)
 ```js
 module.exports.handler = async (event) => {
@@ -31,6 +33,8 @@ module.exports.handler = async (event) => {
 ```
 
 ## Step 4: Create serverless.yml
+![image](https://github.com/liaucg/module_3.13_assignment/assets/22501900/76b53264-b9b9-4d6e-85ae-44ddf43df4a5)
+
 [serverless.yml](serverless.yml)
 ```yml
 service: liau-module-3-13-assignment
@@ -124,6 +128,8 @@ which resulted in the following response:
 
 ## Step 6: Create CI/CD pipeline with GitHub Actions
 Create main.yml in .github/workflows folder
+![image](https://github.com/liaucg/module_3.13_assignment/assets/22501900/d5676618-178c-483d-a8d5-959758950744)
+
 [main.yml](.github/workflows/main.yml)
 ```yml
 name: CICD for Serverless Application
@@ -191,6 +197,10 @@ jobs:
 **env**: Set the environment variables.
 
 ## Step 7: Add AWS_ACCESS_KEY_ID and ASW_SECRET_ACCESS_KEY to GitHub Secrets
+![image](https://github.com/liaucg/module_3.13_assignment/assets/22501900/c96a13e3-13c5-4aec-8200-9da80b4e2285)
 
 ## Step 8: Push changes to GitHub to start the workflow
 Commit changes locally and push it to GitHub. Navigate the repo on GitHub, click on the **Actions** tab to see the workflows.
+![image](https://github.com/liaucg/module_3.13_assignment/assets/22501900/4610cf33-f149-43f8-9323-3fc908dfb0e9)
+
+![image](https://github.com/liaucg/module_3.13_assignment/assets/22501900/ff439593-84a9-4973-8211-ad12a088a86d)
