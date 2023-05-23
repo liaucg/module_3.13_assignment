@@ -210,7 +210,7 @@ Commit changes locally and push it to GitHub. Navigate the repo on GitHub, click
 ![image](https://github.com/liaucg/module_3.13_assignment/assets/22501900/d5fb8a2f-7bd5-4f61-a2f3-abe3a48df829)
 
 ## Step 10: Retrieve the stored secret from AWS Secrets Manager as part of the CI/CD pipeline
-Add a new job **retrieve-secret** .github/workflows/main.yml to retrieve the stored secret *liau_secret_1* from AWS Secrets Manager and inject into environment variables
+Add a new job **retrieve-secret** .github/workflows/main.yml to retrieve the stored secret *LIAU_SECRET_2* from AWS Secrets Manager and inject into environment variables
 ```yml
 retrieve-secret:
   runs-on: ubuntu-latest
@@ -226,14 +226,14 @@ retrieve-secret:
    - name: Read secrets from AWS Secrets Manager into environment variables
      uses: abhilash1in/aws-secrets-manager-action@v2.1.0
      with:
-       secrets: LIAU_SECRET_1
+       secrets: LIAU_SECRET_2
        parse-json: true
 ```
 
-The last step added will print the value of *liau_secret_1*
+The last step added will print the value of *LIAU_SECRET_2*
 ```yml
 - name: Check if env variable is set after fetching secrets
-  run: if [ -z ${LIAU_SECRET_1+x} ]; then echo "LIAU_SECRET_1 is unset"; else echo "LIAU_SECRET_1 is set to '$LIAU_SECRET_1'"; fi
+  run: if [ -z ${LIAU_SECRET_2+x} ]; then echo "LIAU_SECRET_2 is unset"; else echo "LIAU_SECRET_2 is set to '$LIAU_SECRET_2'"; fi
 ```
 
 ## Step 10: Push changes to GitHub to start the workflow
