@@ -38,7 +38,7 @@ jobs:
         secrets: LIAU_SECRET_1
         parse-json: true
     - name: Check if env variable is set after fetching secrets
-      run: if [ -z ${LIAU_SECRET_1+x} ]; then echo "LIAU_SECRET_1 is unset"; else echo "LIAU_SECRET_1 is set to '$LIAU_SECRET_1'"; fi
+      run: if [ -z ${LIAU_SECRET_1_LOGIN+x} ]; then echo "LIAU_SECRET_1_LOGIN is unset"; else echo "LIAU_SECRET_1_LOGIN is set to '$LIAU_SECRET_1_LOGIN'"; fi
 
   deploy:
     name: deploy
