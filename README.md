@@ -226,13 +226,15 @@ retrieve-secret:
    - name: Read secrets from AWS Secrets Manager into environment variables
      uses: abhilash1in/aws-secrets-manager-action@v2.1.0
      with:
-       secrets: liau_secret_1
+       secrets: LIAU_SECRET_1
        parse-json: true
 ```
 
 The last step added will print the value of *liau_secret_1*
 ```yml
 - name: Check if env variable is set after fetching secrets
-  run: if [ -z ${liau_secret_1+x} ]; then echo "liau_secret_1 is unset"; else echo "liau_secret_1 is set to '$liau_secret_1'"; fi
+  run: if [ -z ${LIAU_SECRET_1+x} ]; then echo "LIAU_SECRET_1 is unset"; else echo "LIAU_SECRET_1 is set to '$LIAU_SECRET_1'"; fi
 ```
 
+## Step 10: Push changes to GitHub to start the workflow
+Commit changes locally and push it to GitHub. Navigate the repo on GitHub, click on the **Actions** tab to see the workflows.
