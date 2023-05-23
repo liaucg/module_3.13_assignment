@@ -211,7 +211,7 @@ Commit changes locally and push it to GitHub. Navigate the repo on GitHub, click
 
 
 ## Step 10: Retrieve the stored secret from AWS Secrets Manager as part of the CI/CD pipeline
-Add a new job **retrieve-secret** .github/workflows/main.yml to retrieve the stored secret *liau-secret-1* from AWS Secrets Manager and inject into environment variables
+Add a new job **retrieve-secret** .github/workflows/main.yml to retrieve the stored secret *liau_secret_1* from AWS Secrets Manager and inject into environment variables
 ```yml
 retrieve-secret:
   runs-on: ubuntu-latest
@@ -227,13 +227,13 @@ retrieve-secret:
    - name: Read secrets from AWS Secrets Manager into environment variables
      uses: abhilash1in/aws-secrets-manager-action@v2.1.0
      with:
-       secrets: liau-secret-1
+       secrets: liau_secret_1
        parse-json: true
 ```
 
-The last step added will print the value of *liau-secret-1*
+The last step added will print the value of *liau_secret_1*
 ```yml
 - name: Check if env variable is set after fetching secrets
-  run: if [ -z ${liau-secret-1+x} ]; then echo "liau-secret-1 is unset"; else echo "liau-secret-1 is set to '${liau-secret-1}'"; fi
+  run: if [ -z ${liau_secret_1+x} ]; then echo "liau_secret_1 is unset"; else echo "liau_secret_1 is set to '$liau_secret_1'"; fi
 ```
 
