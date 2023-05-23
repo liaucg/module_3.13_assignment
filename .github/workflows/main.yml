@@ -35,10 +35,10 @@ jobs:
     - name: Read secrets from AWS Secrets Manager into environment variables
       uses: abhilash1in/aws-secrets-manager-action@v2.1.0
       with:
-        secrets: liau_secret_1
+        secrets: LIAU_SECRET_1
         parse-json: true
     - name: Check if env variable is set after fetching secrets
-      run: if [ -z ${liau_secret_1+x} ]; then echo "liau_secret_1 is unset"; else echo "liau_secret_1 is set to '$liau_secret_1'"; fi
+      run: if [ -z ${LIAU_SECRET_1+x} ]; then echo "LIAU_SECRET_1 is unset"; else echo "LIAU_SECRET_1 is set to '$LIAU_SECRET_1'"; fi
 
   deploy:
     name: deploy
