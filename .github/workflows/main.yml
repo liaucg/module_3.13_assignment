@@ -37,7 +37,7 @@ jobs:
       with:
         secrets: liau-secret-1
     - name: Check if env variable is set after fetching secrets
-      run: if [ -z ${MY_SECRET_1+x} ]; then echo "MY_SECRET_1 is unset"; else echo "MY_SECRET_1 is set to '$MY_SECRET_1'"; fi
+      run: if [ -z ${liau-secret-1+x} ]; then echo "liau-secret-1 is unset"; else echo "liau-secret-1 is set to '$liau-secret-1'"; fi
 
   deploy:
     name: deploy
