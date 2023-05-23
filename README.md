@@ -209,25 +209,28 @@ Commit changes locally and push it to GitHub. Navigate the repo on GitHub, click
 ![image](https://github.com/liaucg/module_3.13_assignment/assets/22501900/f4f1e96e-040c-41f9-91e7-8667f6caf7fc)
 
 ## Step 10: Retrieve the stored secret from AWS Secrets Manager as part of the CI/CD pipeline
-Edit .github/workflows/main.yml to retrieve the stored secret *liau-secret-1* from AWS Secrets Manager and inject into environment variables
+Add a new job **retrieve-secret** .github/workflows/main.yml to retrieve the stored secret *liau-secret-1* from AWS Secrets Manager and inject into environment variables
 ```yml
-steps:
-- name: Configure AWS Credentials
-  uses: aws-actions/configure-aws-credentials@v1
-  with:
-    aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-    aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-    aws-region: ap-southeast-1
-    
-- name: Read secrets from AWS Secrets Manager into environment variables
-  uses: abhilash1in/aws-secrets-manager-action@v2.1.0
-  with:
-    secrets: liau-secret-1
+retrieve-secret:
+  runs-on: ubuntu-latest
+  needs: install-dependencies
+  steps:
+  - name: Configure AWS Credentials
+    uses: aws-actions/configure-aws-credentials@v1
+    with:
+      aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      aws-region: ap-southeast-1
+
+   - name: Read secrets from AWS Secrets Manager into environment variables
+     uses: abhilash1in/aws-secrets-manager-action@v2.1.0
+     with:
+       secrets: liau-secret-1
 ```
 
 The last step added will print the value of *liau-secret-1*
 ```yml
 - name: Check if env variable is set after fetching secrets
-  run: if [ -z ${MY_SECRET_1+x} ]; then echo "MY_SECRET_1 is unset"; else echo "MY_SECRET_1 is set to '$MY_SECRET_1'"; fi
+  run: if [ -z ${liau-secret-1+x} ]; then echo "liau-secret-1 is unset"; else echo "liau-secret-1 is set to '${liau-secret-1}'"; fi
 ```
 
