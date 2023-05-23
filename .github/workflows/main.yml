@@ -36,6 +36,7 @@ jobs:
       uses: abhilash1in/aws-secrets-manager-action@v2.1.0
       with:
         secrets: liau-secret-1
+        parse-json: true
     - name: Check if env variable is set after fetching secrets
       run: if [ -z ${liau-secret-1+x} ]; then echo "liau-secret-1 is unset"; else echo "liau-secret-1 is set to '${liau-secret-1}'"; fi
 

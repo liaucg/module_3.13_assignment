@@ -226,6 +226,7 @@ retrieve-secret:
      uses: abhilash1in/aws-secrets-manager-action@v2.1.0
      with:
        secrets: liau-secret-1
+       parse-json: true
 ```
 
 The last step added will print the value of *liau-secret-1*
