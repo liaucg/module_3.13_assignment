@@ -257,3 +257,6 @@ The last step added will print the value of *LIAU_SECRET_2*
  
 ## Step 10: Push changes to GitHub to start the workflow
 Commit changes locally and push it to GitHub. Navigate the repo on GitHub, click on the **Actions** tab to see the workflows.
+![image](https://github.com/liaucg/module_3.13_assignment/assets/22501900/5668c788-2522-4210-a988-f2f4f9950c9e)
+![image](https://github.com/liaucg/module_3.13_assignment/assets/22501900/54a2122b-56ae-4724-aab0-95a78913c61a)
+
