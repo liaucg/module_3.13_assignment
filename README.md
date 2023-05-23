@@ -210,7 +210,7 @@ Commit changes locally and push it to GitHub. Navigate the repo on GitHub, click
 ![image](https://github.com/liaucg/module_3.13_assignment/assets/22501900/d5fb8a2f-7bd5-4f61-a2f3-abe3a48df829)
 
 ## Step 10: Retrieve the stored secret from AWS Secrets Manager as part of the CI/CD pipeline
-Add a new job **retrieve-secret** .github/workflows/main.yml to retrieve the stored secret *LIAU_SECRET_2* from AWS Secrets Manager and inject into environment variables
+Add a new job **retrieve-secret** to .github/workflows/main.yml to retrieve the stored secret *LIAU_SECRET_2* from AWS Secrets Manager and inject into environment variables
 ```yml
 retrieve-secret:
   runs-on: ubuntu-latest
@@ -254,7 +254,7 @@ The last step added will print the value of *LIAU_SECRET_2*
      ```
 **parse-json**:
  - If parse-json: true and secret value is a valid stringified JSON object, it will be parsed and flattened. Each of the key value pairs in the flattened JSON object will become individual secrets. The original secret name will be used as a prefix.
- 
+
 ## Step 10: Push changes to GitHub to start the workflow
 Commit changes locally and push it to GitHub. Navigate the repo on GitHub, click on the **Actions** tab to see the workflows.
 ![image](https://github.com/liaucg/module_3.13_assignment/assets/22501900/5668c788-2522-4210-a988-f2f4f9950c9e)
