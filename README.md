@@ -204,3 +204,30 @@ Commit changes locally and push it to GitHub. Navigate the repo on GitHub, click
 ![image](https://github.com/liaucg/module_3.13_assignment/assets/22501900/4610cf33-f149-43f8-9323-3fc908dfb0e9)
 
 ![image](https://github.com/liaucg/module_3.13_assignment/assets/22501900/ff439593-84a9-4973-8211-ad12a088a86d)
+
+## Step 9: Add a secret in AWS Secrets Manager
+![image](https://github.com/liaucg/module_3.13_assignment/assets/22501900/f4f1e96e-040c-41f9-91e7-8667f6caf7fc)
+
+## Step 10: Retrieve the stored secret from AWS Secrets Manager as part of the CI/CD pipeline
+Edit .github/workflows/main.yml to retrieve the stored secret *liau-secret-1* from AWS Secrets Manager and inject into environment variables
+```yml
+steps:
+- name: Configure AWS Credentials
+  uses: aws-actions/configure-aws-credentials@v1
+  with:
+    aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+    aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+    aws-region: ap-southeast-1
+    
+- name: Read secrets from AWS Secrets Manager into environment variables
+  uses: abhilash1in/aws-secrets-manager-action@v2.1.0
+  with:
+    secrets: liau-secret-1
+```
+
+The last step added will print the value of *liau-secret-1*
+```yml
+- name: Check if env variable is set after fetching secrets
+  run: if [ -z ${MY_SECRET_1+x} ]; then echo "MY_SECRET_1 is unset"; else echo "MY_SECRET_1 is set to '$MY_SECRET_1'"; fi
+```
+
