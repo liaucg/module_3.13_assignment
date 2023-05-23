@@ -206,9 +206,8 @@ Commit changes locally and push it to GitHub. Navigate the repo on GitHub, click
 ![image](https://github.com/liaucg/module_3.13_assignment/assets/22501900/ff439593-84a9-4973-8211-ad12a088a86d)
 
 ## Step 9: Add a secret in AWS Secrets Manager
-![image](https://github.com/liaucg/module_3.13_assignment/assets/22501900/1c6cf205-558f-4260-ba12-138b5f5dae91)
-![image](https://github.com/liaucg/module_3.13_assignment/assets/22501900/ca25793b-56e8-492d-964f-d780eb277df0)
-
+![image](https://github.com/liaucg/module_3.13_assignment/assets/22501900/472ccad5-020d-4f7d-91e1-41c5395e44a6)
+![image](https://github.com/liaucg/module_3.13_assignment/assets/22501900/4632fd78-b11d-4129-8bac-b0f2981b9d94)
 
 ## Step 10: Retrieve the stored secret from AWS Secrets Manager as part of the CI/CD pipeline
 Add a new job **retrieve-secret** .github/workflows/main.yml to retrieve the stored secret *liau_secret_1* from AWS Secrets Manager and inject into environment variables
